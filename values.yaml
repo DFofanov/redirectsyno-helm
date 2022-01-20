@@ -1,2 +1,4 @@
-FQDN: "cloud.dfv24.com"
-RedirectIP: "10.120.10.10"
+FQDN_Cloud: "cloud.dfv24.com"
+RedirectIP_Cloud: "10.120.10.10"
+FQDN_Home: "home.dfv24.ru"
+RedirectIP_Home: "192.168.10.3"
