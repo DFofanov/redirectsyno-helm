@@ -18,20 +18,20 @@ subsets:
       - ip: "{{ .Values.RedirectIP_Cloud }}"
     ports:
       - port: 5000
-        name: cloud-syno
+        name: cloud-syno        
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   annotations:
     kubernetes.io/ingress.class: nginx
-#    cert-manager.io/cluster-issuer: letsencrypt
+    cert-manager.io/cluster-issuer: letsencrypt
   name: cloud-syno
 spec:
-#  tls:
-#  - hosts:
-#    - "{{ .Values.FQDN_Cloud }}"
-#    secretName: tls-secret
+  tls:
+  - hosts:
+    - "{{ .Values.FQDN_Cloud }}"
+    secretName: tls-secret
   rules:
   - host: "{{ .Values.FQDN_Cloud }}"
     http:
@@ -71,13 +71,13 @@ kind: Ingress
 metadata:
   annotations:
     kubernetes.io/ingress.class: nginx
-#    cert-manager.io/cluster-issuer: letsencrypt
+    cert-manager.io/cluster-issuer: letsencrypt
   name: home-syno
 spec:
-#  tls:
-#  - hosts:
-#    - "{{ .Values.FQDN_Home }}"
-#    secretName: tls-secret
+  tls:
+  - hosts:
+    - "{{ .Values.FQDN_Home }}"
+    secretName: tls-secret
   rules:
   - host: "{{ .Values.FQDN_Home }}"
     http:
